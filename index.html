@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <!-- To-do
+   1) Put grid onto page
+   2) Center grid
+   3) Find out how to change the grid lines' colour
+    -->
+  <style>
+    /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+
+   /* Teacher's Solution */
+   body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* In order to center the painting on the webpage, she targeted the body which is the parent of the container div */
+   }
+   .container{
+    height: 746px; 
+    /* Above dimensions are different from the dimensions given by the teacher since the black underneath
+    still shows at the very bottom of the painting when the height is set to 748px */
+    width: 748px;
+    display: grid;
+    background-color: #000;
+    /* For the rows and columns of the grid, you would need to split the grid into 4 columns
+    -You would need to do this since the bottom of the painting is 4 columns in total.
+    -For the above squares, you could just span them over a few columns
+    -Copy all of the dimensions of the bottom squares for the column dimensions
+     */
+     grid-template-columns: 320px 198px 153px 50px;
+     /* Since there are 2 boxes being split, the white and blue boxes, you would need to make a total of 4 rows
+     -This also accounts for the split rows at the very bottom of the mondrian painting
+     -You can span some of the boxes over 2 rows to get the affect of white2, white3, and white4 */
+     grid-template-rows: 414px 130px 155px 20px;
+     gap: 9px;
+   }
+   .item{
+    background-color: #F0F1EC;
+    /* Set all of the boxes to be white */
+    /* She did this to be able to see the grid spaces that she made */
+   }
+   .red{
+    background-color: #E72F24;
+    /* The dimensions of the column and row of the container div already match the dimensions for this specific box 
+    in the painting */
+   }
+   .white1{
+    grid-column: span 3;
+    /* Stretches the  white1 block over 3 columns
+    -The color of the block is already white due to the code set for all of the boxes in order to see them in the grid */
+
+   }
+   .white2{
+    grid-row: span 2;
+   }
+   .white3{
+    grid-row: span 2;
+    grid-column: span 2;
+   }
+   .blue{
+    background-color: #004592;
+    border-bottom: 10px solid black;
+    /* Says in the dimensions document that you would need a 10px thick border. Does not include the gap dimensions.
+    -Dimensions document gives dimensions for the border */
+
+   }
+   .white4{
+    grid-row: span 2;
+   }
+   .yellow{
+    background-color: #F9D01E;
+   }
+   .black{
+    background-color:#232629 ;
+   }
+
+  </style>
+</head>
+
+<body>
+  <!-- Write your HTML here -->
+
+  <!-- Teacher's Solution -->
+   <div class="container">
+    <div class="item red"></div>
+    <div class="item white1"></div>
+    <div class="item white2"></div>
+    <div class="item white3"></div>
+    <div class="item blue"></div>
+    <div class="item white4"></div>
+    <div class="item"></div>
+    <div class="item yellow"></div>
+    <div class="item black"></div>
+   </div>
+</body>
+
+</html>
